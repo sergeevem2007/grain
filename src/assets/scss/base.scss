@@ -1,5 +1,5 @@
-.pp-tableCell {
-  vertical-align: top;
+.fp-tableCell {
+    vertical-align: top;
 }
 
 .container {
@@ -14,11 +14,108 @@
 
 .main {
   position: relative;
-  background-color: #E5E5E5;
+  background-color: $gray;
+  animation: change-background 5s ease 2s 1;
+  animation-fill-mode: forwards;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75vh;
+  }
+
+  &__img {
+    transform: rotate(-0.86deg);
+  }
+
+  &__start {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes change-background {
+  0% {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='3001' preserveAspectRatio='none' viewBox='0 0 1920 3001'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1121%26quot%3b)' fill='none'%3e%3crect width='1920' height='3001' x='0' y='0' fill='rgba(200%2c 210%2c 78%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c1573 C 55%2c1380 165%2c590.2 275%2c608 C 385%2c625.8 440%2c1608.2 550%2c1662 C 660%2c1715.8 715%2c643.2 825%2c877 C 935%2c1110.8 990%2c2840.6 1100%2c2831 C 1210%2c2821.4 1265%2c1029.4 1375%2c829 C 1485%2c628.6 1541%2c1776.8 1650%2c1829 C 1759%2c1881.2 1866%2c1237.8 1920%2c1090L1920 3001L0 3001z' fill='rgba(229%2c 229%2c 229%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1121'%3e%3crect width='1920' height='3001' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-position: 0px -1500px;
+  }
+
+  50% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-color: $green;
+    background-position: -600px 2000px;
+  }
+
+}
+
+.title {
+
+  &__text {
+    font-family: 'Codec Warm Trial', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 66px;
+    letter-spacing: -0.015em;
+    margin-top: 46px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    font-family: 'Codec Warm Trial', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    display: inline-block;
+    margin-top: -24px;
+
+  }
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $orange;
+  width: 265px;
+  height: 132.5px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+  &__text {
+    font-family: 'Codec Warm Trial', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 39px;
+    color: $light;
+    margin-bottom: 5px;
+  }
+
+  &__img {
+    margin-bottom: 15px;
+    animation: pulse ease 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .header {
-  padding-top: 82px;
+  padding: 62px 5px 0 5px;
 
   &__wrapper {
     display: flex;
@@ -29,13 +126,19 @@
   &__burger {
     position: fixed;
     z-index: 3;
-    top: 63px;
-    left: calc((100vw - 1190px)/2);
+    top: 54px;
+    left: calc((100vw - 1180px)/2);
   }
 
   &__logo {
     display: flex;
     margin-left: auto;
+
+    &:hover {
+      path {
+        fill: #4D36F3 !important;
+      }
+    }
   }
 }
 
