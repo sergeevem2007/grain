@@ -122,7 +122,7 @@
 
 @keyframes change-background {
   0% {
-    background-image: url(../assets/img/Background-green.png);
+    background-image: url('../img/Background-green.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0px -1500px;
@@ -316,7 +316,7 @@
     width: 100%;
     min-height: 520px;
     background-color: #FCF9F0;
-    background-image: url(../assets/img/grain-bg.png);
+    background-image: url('../img/grain-bg.png');
     background-repeat: no-repeat;
     background-position: bottom 55px right;
     border-radius: 18px;
@@ -385,7 +385,7 @@
       + label {
 
         &::before {
-          background-image: url(../assets/img/checked.png);
+          background-image: url('../img/checked.png');
         }
       }
     }
@@ -483,7 +483,7 @@
 }
 
 .noUi-connects {
-  background-image: url(../assets/img/Vector.png);
+  background-image: url('../img/Vector.png');
   background-repeat: no-repeat;
   background-size: 100% 3px;
   background-position: center center;
